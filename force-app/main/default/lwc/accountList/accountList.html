@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <header>Select an account</header>
+        <div if:true={accountList}>
+            <template for:each={accountList} for:item="account">
+                <c-account-card
+                    key={account.Id}
+                    account={account}
+                    onaccountcardclick={handleAccountCardClick}>
+                </c-account-card>
+            </template>
+        </div>
+        <div if:false={accountList}>
+            <p>No accounts to select</p>
+        </div>
+    </lightning-card>
+</template>

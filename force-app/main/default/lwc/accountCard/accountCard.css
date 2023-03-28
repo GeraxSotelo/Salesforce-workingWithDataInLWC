@@ -1,0 +1,35 @@
+.container {
+    border: 1px rgb(206, 206, 206) solid;
+    border-radius: 5px;
+    background-color: white;
+    margin:5px;
+    padding: 2px;
+    max-width: 300px;
+    display: flex;
+}
+
+.container:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+.name {
+    font-weight: strong;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(0, 0, 26)
+}
+
+a:link {
+    color: rgb(156, 156, 156);
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    color: rgb(0, 2, 141);
+}
+a:active {
+    color: blue;
+}

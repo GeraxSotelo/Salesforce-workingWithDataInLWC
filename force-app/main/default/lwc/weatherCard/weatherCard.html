@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <div if:true={contactZipCode}>
+            <header>Weather</header>
+
+            <div class="city-name">
+                {cityName}
+            </div>
+            <div class="temperature">
+                {temperature}
+            </div>
+            <hr>
+            <div class="temp-container">
+                <label class="temps">High</label>
+                <lightning-badge label={tempMax}></lightning-badge>
+                <label class="temps">Low</label>
+                <lightning-badge label={tempMin}></lightning-badge>
+            </div>
+            <hr>
+            <div class="description-container">
+                <p>{main}</p>
+                <p>Description: {description}</p>
+            </div>
+        </div>
+
+        <div if:false={contactZipCode}>
+            <header>Weather</header>
+            <div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

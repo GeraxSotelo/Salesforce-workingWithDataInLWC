@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div>
+            <div if:true={contactList}>
+                <header>Select a contact</header>
+                <div class="container">
+                    <template for:each={contactList} for:item="contact">
+                        <c-contact-card
+                            key={contact.Id}
+                            contact={contact}
+                            oncontactcardclick={handleContactCardClick}>
+                        </c-contact-card>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div if:false={contactList}>
+            <header>Select a contact</header>
+            <p>No contacts to select</p>
+        </div>
+    </lightning-card>
+</template>

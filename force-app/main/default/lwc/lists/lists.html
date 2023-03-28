@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="container">
+            <section  class="account-list-container">
+                <c-account-list onaccountselected={handleAccountSelected}></c-account-list>
+            </section>
+            <section class="contact-list-container">
+                <c-contact-list account-id={accountSelectedId} oncontactselected={handleContactSelected}></c-contact-list>
+            </section>
+            <section class="weather-card-container">
+                <c-weather-card contact-zip-code={contactSelectedZipCode}></c-weather-card>
+            </section>
+        </div>
+    </lightning-card>
+</template>

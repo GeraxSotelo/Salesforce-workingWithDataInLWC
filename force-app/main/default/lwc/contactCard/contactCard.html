@@ -1,0 +1,12 @@
+<template>
+    <div class="container">
+        <div class="contact" if:true={contact}>
+            <a onclick={contactCardClick}>
+                <div class="name">{contact.FirstName} {contact.LastName}</div>
+                <div class="email">Email: {contact.Email}</div>
+                <div class="phone">Phone: {contact.Phone}</div>
+                <div class="zipcode">Zip Code:{contact.MailingPostalCode}</div>
+            </a>
+        </div>
+    </div>
+</template>
