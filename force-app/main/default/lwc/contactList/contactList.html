@@ -2,10 +2,11 @@
     <lightning-card>
         <div>
             <div if:true={contactList}>
-                <header>Select a contact</header>
-                <div class="container">
+                <header>Select a Contact</header>
+                <div class="container slds-grid slds-gutters slds-wrap">
                     <template for:each={contactList} for:item="contact">
                         <c-contact-card
+                            class="slds-col slds-size_3-of-6"
                             key={contact.Id}
                             contact={contact}
                             oncontactcardclick={handleContactCardClick}>
