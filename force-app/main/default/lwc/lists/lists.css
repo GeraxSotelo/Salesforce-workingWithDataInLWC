@@ -1,19 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 section {
     padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.contact-list-container {
-    flex-grow: 2;
-}
-
-.weather-card-container {
-    flex-grow: 2;
 }
