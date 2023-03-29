@@ -14,7 +14,7 @@
 .name {
     font-size: 1.2rem;
     font-weight: strong;
-    align-self: center;
+    /* text-align: center; */
 }
 
 a {

@@ -1,31 +1,42 @@
 <template>
-    <lightning-card>
-        <div if:true={contactZipCode}>
-            <header>Weather</header>
+    <lightning-card class="card">
+        <div class="wrapper" if:true={contactZipCode}>
+            <header>Weather in</header>
 
-            <div class="city-name">
-                {cityName}
+            <div class="inline-block">
+                <div class="city-name">
+                    {cityName}
+                </div>
+                <div class="temperature">
+                    {temperature}
+                    
+                </div>
             </div>
-            <div class="temperature">
-                {temperature}
+            <div class="icon inline-block">
+                <img class="img-icon" src={imageUrl} id="icon">
             </div>
             <hr>
-            <div class="temp-container">
-                <label class="temps">High</label>
-                <lightning-badge label={tempMax}></lightning-badge>
-                <label class="temps">Low</label>
-                <lightning-badge label={tempMin}></lightning-badge>
+            <div class="temps-container">
+                <div class="temp-max">
+                    <label>High:</label>
+                    <lightning-badge label={tempMax}></lightning-badge>
+                </div>
+                <div class="temp-min">
+                    <label>Low:</label>
+                    <lightning-badge label={tempMin}></lightning-badge>
+                </div>
             </div>
             <hr>
             <div class="description-container">
-                <p>{main}</p>
-                <p>Description: {description}</p>
+                <p class="description-title">{main}</p>
+                <p class="description">Description: {description}</p>
             </div>
         </div>
 
-        <div if:false={contactZipCode}>
+        <div class="wrapper" if:false={contactZipCode}>
             <header>Weather</header>
-            <div>
+            <div class="no-data">
+                <p>No weather to display</p>
             </div>
         </div>
     </lightning-card>

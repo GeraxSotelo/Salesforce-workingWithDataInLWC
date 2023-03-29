@@ -12,6 +12,7 @@ export default class Weather extends LightningElement {
     main;
     description;
     icon;
+    imageUrl;
 
     @wire(MessageContext) messageContext;
 
@@ -24,7 +25,7 @@ export default class Weather extends LightningElement {
     }
 
     handleMessage(message) {
-      console.log('TEST message: ', message);
+      console.log('message from subscription: ', message);
       this.contactZipCode = message.zipcode;
     }
     
@@ -35,16 +36,15 @@ export default class Weather extends LightningElement {
     @wire(getWeatherData, {zipCode : '$contactZipCode'})
     weatherData({data, error}){
         if (data) {
-            this.cityName = data.name;
-            this.temperature = data.temp;
-            this.tempMin = data.temp_min;
-            this.tempMax = data.temp_max;
-            this.main = data.main;
-            this.description = data.description;
-            this.icon = data.icon;
-            console.log('TEST weather data: ', data);
-            console.log('TEST city name: ', this.cityName);
-            console.log('TEST data contactZipCode: ', this.contactZipCode);
+          console.log('weatherData: ', data);
+          this.cityName = data.name;
+          this.temperature = data.temp;
+          this.tempMin = data.temp_min;
+          this.tempMax = data.temp_max;
+          this.main = data.main;
+          this.description = data.description;
+          this.icon = data.icon;
+          this.imageUrl = 'http://openweathermap.org/img/w/'+data.icon+'.png'
         } else if (error) {
             console.log('error: ', error);
         }

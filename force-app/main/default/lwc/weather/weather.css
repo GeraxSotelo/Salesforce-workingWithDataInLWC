@@ -1,22 +1,67 @@
+.card {
+    background-color: rgb(203, 255, 255);
+}
+
+.wrapper {
+    padding: 20px;
+}
+
 header {
     height: 50px;
     color: rgb(46, 46, 46);
-    font-size: x-large;
+    font-size: large;
     padding: 5px;
-  }
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
 
 .city-name {
     font-size: 1.6rem;
 }
 
 .temperature {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
+}
+
+hr {
+    margin: 10px;
+}
+
+.icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-left: 20px;
+}
+
+.img-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.temps-container {
+    padding: 5px;
+    text-align: center;
+}
+
+.temp-max, .temp-min {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
 }
 
 .description-container {
     font-size: medium;
+    text-align: center;
 }
 
-.temps {
-    padding: 5px;
+.description-title {
+    font-size: 1.4rem;
+}
+
+.no-data {
+    text-align: center;
 }
