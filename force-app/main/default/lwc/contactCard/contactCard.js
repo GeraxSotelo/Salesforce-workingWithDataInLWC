@@ -7,7 +7,6 @@ export default class ContactCard extends LightningElement {
         const event = new CustomEvent('contactcardclick', {
             detail: this.contact.MailingPostalCode
         });
-        console.log('contactCardClick detail: ', this.contact.MailingPostalCode);
         console.log('contact: ', this.contact);
 
         // fire event

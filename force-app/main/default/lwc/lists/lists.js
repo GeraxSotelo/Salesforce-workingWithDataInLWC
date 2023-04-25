@@ -7,12 +7,11 @@ export default class Lists extends LightningElement {
     handleAccountSelected(evt) {
         this.accountSelectedId = evt.detail;
         // To clear the weather when a different account is selected
-        // uncomment the line belore
+        // uncomment the line below
         // this.contactSelectedZipCode = null;
     }
 
     handleContactSelected(evt) {
-        console.log('handle contact selected');
         this.contactSelectedZipCode = evt.detail;
     }
 }

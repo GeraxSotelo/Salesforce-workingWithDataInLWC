@@ -31,29 +31,36 @@ public class OpenWeatherMapHttpCallout {
 
 
     public static Map<String, String> createDataMap(String jsonString) {
+        final String DATA_NAME = 'name';
+        final String DATA_MAIN = 'main';
+        final String DATA_ICON = 'icon';
+        final String DATA_TEMP = 'temp';
+        final String DATA_WEATHER = 'weather';
+        final String DATA_TEMP_MIN = 'temp_min';
+        final String DATA_TEMP_MAX = 'temp_max';
+        final String DATA_DESCRIPTION = 'description';
         Map<String, String> dataMap = new Map<String, String>();
-
         Map<String, Object> stringToObjectMap = (Map<String, Object>)JSON.deserializeUntyped(jsonString);
         
-        String name = (String)stringToObjectMap.get('name');
-        dataMap.put('name', name);
+        String name = (String)stringToObjectMap.get(DATA_NAME);
+        dataMap.put(DATA_NAME, name);
 
         Map<String, Object> mainBodyMap = (Map<String, Object>)stringToObjectMap.get('main');
-        Decimal temp = (Decimal)mainBodyMap.get('temp');
-        Decimal tempMin = (Decimal)mainBodyMap.get('temp_min');
-        Decimal tempMax = (Decimal)mainBodyMap.get('temp_max');
-        dataMap.put('temp', String.valueOf(temp));
-        dataMap.put('temp_min', String.valueOf(tempMin));
-        dataMap.put('temp_max', String.valueOf(tempMax));
+        Decimal temp = (Decimal)mainBodyMap.get(DATA_TEMP);
+        Decimal tempMin = (Decimal)mainBodyMap.get(DATA_TEMP_MIN);
+        Decimal tempMax = (Decimal)mainBodyMap.get(DATA_TEMP_MAX);
+        dataMap.put(DATA_TEMP, String.valueOf(temp));
+        dataMap.put(DATA_TEMP_MIN, String.valueOf(tempMin));
+        dataMap.put(DATA_TEMP_MAX, String.valueOf(tempMax));
 
-        List<Object> weatherList = (List<Object>)stringToObjectMap.get('weather');
+        List<Object> weatherList = (List<Object>)stringToObjectMap.get(DATA_WEATHER);
         Map<String, Object> weatherMap = (Map<String, Object>)weatherList[0];
-        String main = (String)weatherMap.get('main');
-        String icon = (String)weatherMap.get('icon');
-        String description = (String)weatherMap.get('description');
-        dataMap.put('main', String.valueOf(main));
-        dataMap.put('icon', String.valueOf(icon));
-        dataMap.put('description', String.valueOf(description));
+        String main = (String)weatherMap.get(DATA_MAIN);
+        String icon = (String)weatherMap.get(DATA_ICON);
+        String description = (String)weatherMap.get(DATA_DESCRIPTION);
+        dataMap.put(DATA_MAIN, String.valueOf(main));
+        dataMap.put(DATA_ICON, String.valueOf(icon));
+        dataMap.put(DATA_DESCRIPTION, String.valueOf(description));
 
         return dataMap;
     }
